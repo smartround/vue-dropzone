@@ -21,8 +21,8 @@ export default defineConfig({
   build: {
     lib: {
       entry: resolve(__dirname, './src/index.js'),
-      name: 'hello-button',
-      fileName: (format) => `hello-button.${format}.js`
+      name: 'vue3-dropzone',
+      fileName: (format) => `vue3-dropzone.${format}.js`
     },
     rollupOptions: {
       external: ['vue'],
