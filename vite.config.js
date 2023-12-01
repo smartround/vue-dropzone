@@ -1,5 +1,4 @@
 import { defineConfig } from 'vite'
-import { resolve } from 'path';
 import vue from '@vitejs/plugin-vue'
 import { terser } from 'rollup-plugin-terser';
 import replace from '@rollup/plugin-replace';
@@ -19,11 +18,6 @@ export default defineConfig({
     process.env.NODE_ENV === 'production' && terser(),
   ],
   build: {
-    lib: {
-      entry: resolve(__dirname, './src/index.js'),
-      name: 'hello-button',
-      fileName: (format) => `hello-button.${format}.js`
-    },
     rollupOptions: {
       external: ['vue'],
       input: 'src/index.js',
