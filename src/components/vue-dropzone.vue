@@ -83,9 +83,6 @@ export default {
     }
   },
   mounted() {
-    if (this.$isServer && this.hasBeenMounted) {
-      return;
-    }
     this.hasBeenMounted = true;
 
     this.dropzone = new Dropzone(
@@ -267,7 +264,7 @@ export default {
 
     vm.$emit("vdropzone-mounted");
   },
-  beforeDestroy() {
+  beforeUnmount() {
     if (this.destroyDropzone) this.dropzone.destroy();
   },
   methods: {
